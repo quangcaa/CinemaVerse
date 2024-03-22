@@ -1,16 +1,16 @@
 const express = require('express')
 const morgan = require('morgan')
 const { engine } = require('express-handlebars')
-const path = require('path');
-const route = require('./routes');
-const db = require('./config/db');
+const path = require('path')
+const route = require('./routes')
+const db = require('./config/db')
 
-const app = express();
-const port = 3000;
+const app = express()
+const port = 5000
 
 // handle form from user
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 // HTTP logger
 app.use(morgan('combined'))
@@ -35,4 +35,4 @@ db.connect();
 route(app)
 
 // Port
-app.listen(port, () => { console.log(`Cinema listening on port ${port}`)})
+app.listen(port, () => { console.log(`Server started on port ${port}`)})
