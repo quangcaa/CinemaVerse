@@ -5,13 +5,10 @@ const Review = new Schema(
     {
         review: { type: String, required: true },
         date: { type: Date, default: Date.now },
-        user: {
-            type: Schema.Types.ObjectId,
-            ref: 'users'
-        },
+        username: { type: String, required: true },
         movie: {
             type: Schema.Types.ObjectId,
-            ref: 'movies'
+            ref: 'movies',
         },
     }
 )
